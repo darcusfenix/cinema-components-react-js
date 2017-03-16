@@ -2,7 +2,7 @@
   "name": "jc-ui-drawer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "babel webpack.config.es6 -o webpack.config.js",
