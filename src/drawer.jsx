@@ -6,10 +6,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 const DrawerSimpleExample = ({label, handleToggle, open}) => (
     <div>
         <RaisedButton
-            label={this.props.label}
-            onTouchTap={this.props.handleToggle}
+            label={label}
+            onTouchTap={handleToggle}
         />
-        <Drawer open={this.props.open}>
+        <Drawer open={open}>
             <MenuItem>Menu Item</MenuItem>
             <MenuItem>Menu Item 2</MenuItem>
         </Drawer>
