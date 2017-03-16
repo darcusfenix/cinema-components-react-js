@@ -4,7 +4,9 @@ export default  {
     entry: './index.es6',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        "libraryTarget": "umd",
+        "library": "jc-ui-drawer"
     },
     module: {
         rules: [{
@@ -12,5 +14,5 @@ export default  {
             use: [ "babel-loader"
             ]
         }],
-    },
+    }
 };

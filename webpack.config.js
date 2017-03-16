@@ -14,7 +14,9 @@ exports.default = {
     entry: './index.es6',
     output: {
         filename: 'bundle.js',
-        path: _path2.default.resolve(__dirname, 'dist')
+        path: _path2.default.resolve(__dirname, 'dist'),
+        "libraryTarget": "umd",
+        "library": "jc-ui-drawer"
     },
     module: {
         rules: [{
