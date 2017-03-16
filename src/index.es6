@@ -1,1 +1,3 @@
-import Drawer from "./Drawer";
+import drawer from "./Drawer";
+
+export const Drawer = drawer;
