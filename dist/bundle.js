@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * @description Componente que nos ayudará a pintar el menú, vertical-izquierdo
- * @param {boolean} drawerState : Bandera útil para mostrar u ocultar el Drawer
+ * @param {boolean} open : Bandera útil para mostrar u ocultar el Drawer
  * @param {func} onRequestChange : Función que se ejecuta cuando hay click en la parte oscura
  * @param {string} logoHeader : ruta de la imagen que se pintará en el header del drawer
  * @param {string} logoFooter : ruta de la imagen que se pintará en el footer del drawer
@@ -30,7 +30,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @return {XML} : Componente Drawer sin estado
  */
 var drawer = function drawer(_ref) {
-    var drawerState = _ref.drawerState,
+    var open = _ref.open,
         onRequestChange = _ref.onRequestChange,
         logoHeader = _ref.logoHeader,
         logoFooter = _ref.logoFooter,
@@ -60,24 +60,25 @@ var drawer = function drawer(_ref) {
         _Drawer2.default,
         {
             docked: false,
-            open: drawerState,
+            open: open,
             onRequestChange: onRequestChange },
-        _react2.default.createElement(
+        logoHeader && _react2.default.createElement(
             "div",
-            { className: "text-center" },
+            { className: "mn-img-drawer-header" },
             _react2.default.createElement("img", { src: logoHeader, alt: "m\xE1s n\xF3mina" })
         ),
         draweritems,
         _react2.default.createElement(_Divider2.default, null),
-        _react2.default.createElement("img", {
-            src: logoFooter,
-            className: "mn-img-drawer-footer",
-            alt: "sif" })
+        logoFooter && _react2.default.createElement(
+            "div",
+            { className: "mn-img-drawer-footer" },
+            _react2.default.createElement("img", { src: logoFooter, alt: "sif" })
+        )
     );
 };
 
 drawer.propTypes = {
-    drawerState: _react2.default.PropTypes.bool.isRequired,
+    open: _react2.default.PropTypes.bool.isRequired,
     onRequestChange: _react2.default.PropTypes.func.isRequired,
     logoHeader: _react2.default.PropTypes.string.isRequired,
     logoFooter: _react2.default.PropTypes.string.isRequired,
