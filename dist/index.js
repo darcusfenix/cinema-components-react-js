@@ -1,6 +1,6 @@
 "use strict";
 
-var _Drawer = require("./src/Drawer");
+var _Drawer = require("./Drawer");
 
 var _Drawer2 = _interopRequireDefault(_Drawer);
 
