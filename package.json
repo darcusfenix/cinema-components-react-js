@@ -1,11 +1,11 @@
 {
-  "name": "jc-ui-drawer",
+  "name": "crisostomo-ui",
   "version": "1.0.3",
   "description": "",
-  "main": "./dist/bundle.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel index.es6 -o dist/bundle.js"
+    "start": "babel src/ --out-dir dist/"
   },
   "author": "Juan Crisóstomo",
   "license": "ISC",
