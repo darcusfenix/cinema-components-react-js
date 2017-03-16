@@ -24,6 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @description Componente que nos ayudará a pintar el menú, vertical-izquierdo
  * @param {boolean} open : Bandera útil para mostrar u ocultar el Drawer
  * @param {func} onRequestChange : Función que se ejecuta cuando hay click en la parte oscura
+ * @param {func} onTouchTap: Función que se ejecuta cuando hay click en cada elemento del menú
  * @param {string} logoHeader : ruta de la imagen que se pintará en el header del drawer
  * @param {string} logoFooter : ruta de la imagen que se pintará en el footer del drawer
  * @param {[]} listItems : Array de opciones a pintar en el menú/drawer
@@ -32,29 +33,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var drawer = function drawer(_ref) {
     var open = _ref.open,
         onRequestChange = _ref.onRequestChange,
+        _onTouchTap = _ref.onTouchTap,
         logoHeader = _ref.logoHeader,
         logoFooter = _ref.logoFooter,
         listItems = _ref.listItems;
 
 
-    var draweritems = listItems.map(function (item) {
+    var items = [];
 
-        var sub = function sub(subItems) {
-            var array = [];
-            subItems && subItems.length && subItems.map(function (subItem) {
-                array.push(_react2.default.createElement(_List.ListItem, { key: subItem.key,
-                    primaryText: subItem.primaryText,
-                    leftIcon: subItem.leftIcon }));
+    var buildItems = function buildItems(list) {
+
+        return list && list.length && list.map(function (item) {
+
+            return _react2.default.createElement(_List.ListItem, { key: item.key,
+                primaryText: item.primaryText,
+                leftIcon: item.leftIcon,
+                onTouchTap: function onTouchTap() {
+                    _onTouchTap(item.link);
+                },
+                nestedItems: buildItems(item.nestedItems)
             });
-            return array;
-        };
-
-        return _react2.default.createElement(_List.ListItem, { key: item.key,
-            primaryText: item.primaryText,
-            leftIcon: item.leftIcon,
-            nestedItems: sub(item.nestedItems)
         });
-    });
+    };
+
+    items = buildItems(listItems);
 
     return _react2.default.createElement(
         _Drawer2.default,
@@ -67,7 +69,7 @@ var drawer = function drawer(_ref) {
             { className: "mn-img-drawer-header" },
             _react2.default.createElement("img", { src: logoHeader, alt: "m\xE1s n\xF3mina" })
         ),
-        draweritems,
+        items,
         _react2.default.createElement(_Divider2.default, null),
         logoFooter && _react2.default.createElement(
             "div",
@@ -80,6 +82,7 @@ var drawer = function drawer(_ref) {
 drawer.propTypes = {
     open: _react2.default.PropTypes.bool.isRequired,
     onRequestChange: _react2.default.PropTypes.func.isRequired,
+    onTouchTap: _react2.default.PropTypes.func.isRequired,
     logoHeader: _react2.default.PropTypes.string.isRequired,
     logoFooter: _react2.default.PropTypes.string.isRequired,
     listItems: _react2.default.PropTypes.array.isRequired
