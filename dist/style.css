@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/***** ESTILOS DRAWER *****/
+.mn-img-drawer-header{
+    height: 70px;
+    width: 100%;
+}
+.mn-img-drawer-footer{
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    top: 100%;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -50px;
+}
+
+.mn-img-drawer-header img, 
+.mn-img-drawer-footer img{
+    text-align: center;
+}
