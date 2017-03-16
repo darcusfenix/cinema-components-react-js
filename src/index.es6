@@ -1,1 +1,1 @@
-import Drawer from "./src/Drawer";
+import Drawer from "./Drawer";
