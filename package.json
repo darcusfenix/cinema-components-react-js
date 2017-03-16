@@ -11,6 +11,7 @@
   "author": "Juan Crisóstomo",
   "license": "ISC",
   "devDependencies": {
-
+ "babel": "^6.23.0",
+   
   }
 }
