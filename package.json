@@ -1,12 +1,11 @@
 {
   "name": "jc-ui-drawer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "babel webpack.config.es6 -o webpack.config.js",
-    "start": "webpack --config webpack.config.js"
+    "start": "babel index.es6 -o dist/bundle.js"
   },
   "author": "Juan Crisóstomo",
   "license": "ISC",
