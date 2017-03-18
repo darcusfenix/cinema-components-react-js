@@ -10,17 +10,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _Card = require("material-ui/Card");
 
-var _FlatButton = require("material-ui/FlatButton");
-
-var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
 var _IconButton = require("material-ui/IconButton");
 
 var _IconButton2 = _interopRequireDefault(_IconButton);
-
-var _IconMenu = require("../widgets/IconMenu");
-
-var _IconMenu2 = _interopRequireDefault(_IconMenu);
 
 var _modeEdit = require("material-ui/svg-icons/editor/mode-edit");
 
@@ -59,7 +51,6 @@ var Porlet = function Porlet(props) {
         _react2.default.createElement(
             _Card.CardActions,
             { style: { textAlign: "right" } },
-            _react2.default.createElement(_IconMenu2.default, { rowId: "sdaasdasd", listOptions: items }),
             _react2.default.createElement(
                 _IconButton2.default,
                 { tooltip: "SVG Icon" },
