@@ -43,7 +43,7 @@ var drawer = function drawer(_ref) {
 
     var buildItems = function buildItems(list) {
 
-        return list && list.length && list.map(function (item) {
+        return list && list.length && list.map(function (item, i) {
 
             return _react2.default.createElement(_List.ListItem, { key: item.key,
                 primaryText: item.primaryText,
@@ -89,3 +89,14 @@ drawer.propTypes = {
 };
 
 exports.default = drawer;
+
+
+var direccopm = {
+    "_id": "789546123",
+    "calle": "sad"
+};
+
+var mongo = {
+    "email": "sdffd",
+    "direccion": "ObjectiId('789546123')"
+};

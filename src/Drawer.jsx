@@ -19,7 +19,7 @@ const drawer = ({open, onRequestChange, onTouchTap, logoHeader, logoFooter, list
 
     const buildItems = (list) => {
 
-        return list && list.length && list.map((item) => {
+        return list && list.length && list.map((item, i) => {
 
                 return (<ListItem key={item.key}
                                   primaryText={item.primaryText}
@@ -73,3 +73,13 @@ drawer.propTypes = {
 };
 
 export default drawer;
+
+const direccopm = {
+    "_id": "789546123",
+    "calle": "sad"
+};
+
+const mongo = {
+    "email": "sdffd",
+    "direccion": "ObjectiId('789546123')"
+};

@@ -32,3 +32,18 @@
     min-height: 400px;
 
 }
+
+
+ /*****  PORLET BODY *****/
+.static-info{
+
+    margin-bottom: 10px;
+    font-size: 14px;
+
+}
+
+.static-info .value{
+
+    font-weight: 600;
+
+}
