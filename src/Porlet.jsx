@@ -1,8 +1,6 @@
 import React, {PropTypes} from "react";
 import {Card, CardActions, CardHeader, CardText} from "material-ui/Card";
-import FlatButton from "material-ui/FlatButton";
 import IconButton from 'material-ui/IconButton';
-import IconMenu from "../widgets/IconMenu";
 import ModeEdit from "material-ui/svg-icons/editor/mode-edit";
 
 const Porlet = (props) => {
@@ -29,7 +27,6 @@ const Porlet = (props) => {
                 {props.children}
             </CardText>
             <CardActions style={{textAlign: "right"}}>
-                <IconMenu rowId={"sdaasdasd"} listOptions={items}  />
                 <IconButton tooltip="SVG Icon">
                     <ModeEdit />
                 </IconButton>
