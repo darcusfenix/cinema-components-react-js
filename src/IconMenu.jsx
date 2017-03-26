@@ -5,11 +5,17 @@ import IconButton from "material-ui/IconButton";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 
 /**
- * Example of nested menus within an IconMenu.
+ * @description Pinta un menú deslisable
+ * @param {{}} props : opciones para configuración
+ * @return {{jsx}} : componente icon menu
  */
 const IconMenuExampleNested = (props) => {
 
-    const {anchorOrigin, targetOrigin, listOptions, rowId} = props;
+    const {
+        anchorOrigin = {"horizontal": "left", "vertical": "top"},
+        targetOrigin = {"horizontal": "left", "vertical": "top"},
+        listOptions, rowId
+    } = props;
 
     let items = [];
 
@@ -19,7 +25,7 @@ const IconMenuExampleNested = (props) => {
 
                 return (
                     <MenuItem
-                        key={`menu-${item}-${i}`}
+                        key={`menu-${rowId}-${i}`}
                         primaryText={item.primaryText}
                         rightIcon={item.rightIcon && item.rightIcon}
                         leftIcon={item.leftIcon && item.leftIcon}
@@ -40,20 +46,25 @@ const IconMenuExampleNested = (props) => {
 
     return (
         <IconMenu
-            iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-            anchorOrigin={{horizontal: "left", vertical: "top"}}
-            targetOrigin={{horizontal: "left", vertical: "top"}}>
+            iconButtonElement={<IconButton>
+                <MoreVertIcon />
+            </IconButton>}
+            anchorOrigin={anchorOrigin}
+            targetOrigin={targetOrigin}>
 
             {items}
 
         </IconMenu>
-    )
+    );
+
 };
 
 
 IconMenuExampleNested.propTypes = {
-    listOptions: PropTypes.array.isRequired,
-    rowId: PropTypes.string.isRequired,
+    "listOptions": PropTypes.array.isRequired,
+    "rowId": PropTypes.string.isRequired,
+    "anchorOrigin": PropTypes.object,
+    "targetOrigin": PropTypes.object
 };
 
 

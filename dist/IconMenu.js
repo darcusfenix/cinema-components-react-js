@@ -27,11 +27,15 @@ var _moreVert2 = _interopRequireDefault(_moreVert);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Example of nested menus within an IconMenu.
+ * @description Pinta un menú deslisable
+ * @param {{}} props : opciones para configuración
+ * @return {{jsx}} : componente icon menu
  */
 var IconMenuExampleNested = function IconMenuExampleNested(props) {
-    var anchorOrigin = props.anchorOrigin,
-        targetOrigin = props.targetOrigin,
+    var _props$anchorOrigin = props.anchorOrigin,
+        anchorOrigin = _props$anchorOrigin === undefined ? { "horizontal": "left", "vertical": "top" } : _props$anchorOrigin,
+        _props$targetOrigin = props.targetOrigin,
+        targetOrigin = _props$targetOrigin === undefined ? { "horizontal": "left", "vertical": "top" } : _props$targetOrigin,
         listOptions = props.listOptions,
         rowId = props.rowId;
 
@@ -43,7 +47,7 @@ var IconMenuExampleNested = function IconMenuExampleNested(props) {
         return list && list.length && list.map(function (item, i) {
 
             return _react2.default.createElement(_MenuItem2.default, {
-                key: "menu-" + item + "-" + i,
+                key: "menu-" + rowId + "-" + i,
                 primaryText: item.primaryText,
                 rightIcon: item.rightIcon && item.rightIcon,
                 leftIcon: item.leftIcon && item.leftIcon,
@@ -66,15 +70,17 @@ var IconMenuExampleNested = function IconMenuExampleNested(props) {
                 null,
                 _react2.default.createElement(_moreVert2.default, null)
             ),
-            anchorOrigin: { horizontal: "left", vertical: "top" },
-            targetOrigin: { horizontal: "left", vertical: "top" } },
+            anchorOrigin: anchorOrigin,
+            targetOrigin: targetOrigin },
         items
     );
 };
 
 IconMenuExampleNested.propTypes = {
-    listOptions: _react.PropTypes.array.isRequired,
-    rowId: _react.PropTypes.string.isRequired
+    "listOptions": _react.PropTypes.array.isRequired,
+    "rowId": _react.PropTypes.string.isRequired,
+    "anchorOrigin": _react.PropTypes.object,
+    "targetOrigin": _react.PropTypes.object
 };
 
 exports.default = IconMenuExampleNested;

@@ -16,15 +16,21 @@ var _Divider = require("material-ui/Divider");
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
+var _Spinner = require("./Spinner");
+
+var _Spinner2 = _interopRequireDefault(_Spinner);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Body = function Body(props) {
-    var title = props.title;
+    var title = props.title,
+        showSpinner = props.showSpinner;
 
 
     return _react2.default.createElement(
         _Paper2.default,
-        { className: "nm-paper-body mn-pd-30", zDepth: 1 },
+        { className: "nm-paper-body mn-pd-30",
+            zDepth: 1 },
         title && _react2.default.createElement(
             "div",
             null,
@@ -39,13 +45,15 @@ var Body = function Body(props) {
             "div",
             { className: "mn-pd-30" },
             props.children
-        )
+        ),
+        showSpinner && _react2.default.createElement(_Spinner2.default, { visible: showSpinner })
     );
 };
 
 Body.propTypes = {
-    title: _react.PropTypes.string,
-    children: _react.PropTypes.element
+    "title": _react.PropTypes.string,
+    "showSpinner": _react.PropTypes.bool,
+    "children": _react.PropTypes.node
 };
 
 exports.default = Body;
